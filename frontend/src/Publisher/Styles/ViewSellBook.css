@@ -1,0 +1,392 @@
+.ViewBookSell {
+    position: relative;
+    width: calc(100% - 350px);
+    height: auto;
+    left: 350px;
+    top: 2rem;
+    display: flex;
+    justify-content: center;
+
+    & h1 {
+        position: absolute;
+        text-align: center;
+        color: var(--text-color-first);
+    }
+
+    & .ViewBookSell-card {
+        position: absolute;
+        top: 80px;
+        width: 80%;
+        height: auto;
+        border-radius: 20px 20px;
+        background: transparent;
+        box-shadow: 0px 0px 10px gray;
+
+        & .text-group {     
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        & .book-profile {
+            margin-top: 4rem;
+            gap: 30px;
+            display: flex;
+            justify-content: center;
+
+            & .bookimg {
+                position: relative;
+                width: 300px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & img {
+                    position: relative;
+                    width: 300px;
+                    height: 400px;
+                }
+            }
+                
+            & .detail-text {
+                position: relative;
+                width: auto;
+                top: 0;
+                line-height: 1.6;
+                color: var(--text-color-first);
+
+                & .book-group {
+                    padding-bottom: 15px;
+                }
+            }
+
+            & button {
+                width: 190px;
+                height: 40px;
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 8px;
+                background: transparent;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            & .del-book {
+                background : var(--btn-editbook-delete-color);
+            }
+
+            & .del-book:hover {
+                background: var(--btn-editbook-delete-color-hover);
+            }
+
+            & .promotion-book {
+                background : #33db62;
+            }
+
+            & .promotion-book:hover {
+                background: #27a54b;
+            }
+
+        }
+    
+        & .prologue {
+            width: 90%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--text-color-first);
+
+            
+            & h3 {
+                text-align: center;
+                font-weight: 100;
+            }
+    
+            & p {
+                padding: 10px;
+                text-align: center;
+            }
+    
+            & .cut-off-text {
+                --max-line: 3;
+                --line-height: 2.4;
+    
+                max-height: calc(var(--max-line) * 16px * var(--line-height));
+                line-height: var(--line-height);
+                position: relative;
+                overflow: hidden;
+            }
+    
+            & .cut-off-text:has(+ .expand-btn:not(:checked))::before {
+                position: absolute;
+                content: "";
+                height: calc(16px * var(--line-height));
+                width: 100%;
+                bottom: 0;
+                background: linear-gradient(to bottom,transparent,white);
+            }
+    
+            & .expand-btn {
+                position: relative;
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 15%;
+                appearance: none;
+                padding: .5em;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                color: var(--text-color-first);
+                font-size: 16px;
+            }
+    
+            & .expand-btn:hover {
+                color: var(--text-color-secondary);
+            }
+    
+            & .expand-btn::before {
+                content: "อ่านต่อเพิ่ม";
+                margin-top: 0px;
+            }
+    
+            & .expand-btn:checked::before {
+                content: "ย่อข้อความลง";
+                margin-top: 0px;
+            }
+    
+            & .cut-off-text:has(+ .expand-btn:checked) {
+                max-height: none;
+            }
+            
+            & .seperate-line {
+                position: relative;
+                display: flex;
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 100%;
+                top:0px;
+                border-bottom: 2px solid var(--text-color-secondary);
+            }
+        }
+    
+        & .chapter {
+            width: 100%;
+            margin-top: 40px;
+            padding-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            & .book-chapter {
+                width: 90%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                border-bottom: 1px solid var(--text-color-secondary);
+               
+                & button {
+                    width: 100%;
+                    height: 70px;
+                    margin-top: 15px;
+                    color: var(--text-color-first);
+                    border: none;
+                    background: transparent;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 16px;
+                    cursor: pointer;
+        
+                    & .ep {
+                        width: 15%;
+                    }
+        
+                    & .ep-name {
+                        width: 55%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+        
+                    & .ep-view {
+                        width: 15%;
+                        gap: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+        
+                        & span {
+                            margin-top: 7px;
+                            font-size: 25px;
+                        }
+                    }
+        
+                    & .ep-date {
+                        width: 15%;
+                        text-align: left;
+                    }
+                }
+        
+                & button:hover {
+                    background: #f8f6f6;
+                }
+
+            }
+
+            & h2 {
+                margin-top: 40px;
+                text-align: center;
+                color: var(--text-color-secondary);
+            }
+        }   
+    }
+}
+
+.approve-decide-box-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.approve-decide-confirm {
+    width: 450px;
+    height: fit-content;
+    z-index: 1;
+    flex-direction: column;
+    background: white;
+    border-radius: 5px;
+
+    & .massage-alert {
+        position: relative;
+        width: 90%;
+        height: 60px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 25px;
+        border: 2px solid var(--btn-edit-cancel);
+
+        & h5 {
+            display: flex;
+            justify-content: center;
+            color: var(--btn-edit-cancel);
+            font-size: 18px;
+        }
+
+        & p {
+            text-align: center;
+            color: var(--btn-edit-cancel);
+        }
+
+    }
+
+    & .pwd-alert p {
+        position: relative;
+        top: 50px;
+        text-align: center;
+        color: var(--btn-edit-cancel);
+    }
+
+    & .pwd {
+        position: relative;
+        width: 90%;
+        top: 40px;
+        margin: auto;
+        left: 0;
+        right: 0;
+
+        & label {
+            margin-left: 2px;
+            color: var(--btn-editbook-delete-color-hover);
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        & input {
+            width: 90%;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid var(--text-color-secondary);
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            color: var(--text-color-first);
+            padding: 0 35px 0 5px;
+        }
+    }
+
+    & .box-btn {
+        position: relative;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+
+        & button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-edit-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-edit-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-edit-cancel);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-edit-cancel-hover);
+        }
+    }
+
+    & .box-btn.accept {
+        margin-top: 60px;
+    }
+
+    & .box-btn.notaccept {
+        margin-top: 10px;
+    }
+}
+
+& .booksellapprove-confirm.accept {
+    height: 200px;
+}
+
+& .booksellapprove-confirm.notaccept {
+    height: 300px;
+}
+

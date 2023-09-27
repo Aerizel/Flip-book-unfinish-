@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400&display=swap');
+
+/*default setting apply to all component*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.card-items {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(12rem,16rem));
+    gap:3rem;
+    justify-content: center;
+}

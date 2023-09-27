@@ -1,0 +1,13 @@
+.publisher-title {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+
+    & h1{
+        text-align: center;
+        color: black;
+    }
+}
+
+

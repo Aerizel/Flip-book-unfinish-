@@ -1,0 +1,119 @@
+:root {
+    --card-text-color: #696969;
+    --progress-value: 0%;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 2%;
+    box-shadow: 0 2px 5px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--card-text-color);
+    transition: 0.1s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 2px 20px gray;
+    
+}
+
+.card-body {
+    & img {
+        height: 15rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    & .card-detail {
+        height: 190px;
+        overflow: hidden;
+
+        & h1,h3,p {
+            text-indent: 5px;
+        }
+
+        & h1 {
+            font-size: 20px;
+        }
+    
+        & h3 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        & .progress-bar {
+            position: relative;
+            width: 245px;
+            height: 10px;
+            overflow: hidden;
+            left: 5px;
+            border-radius: 5px;
+    
+            & .progress-percent {
+                height: 100%;
+                width: var(--progress-value);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #1EC7FD;
+            }
+        }
+
+        & .progress-bar.not-active {
+            background: gray;
+        }
+
+        & .progress-bar.active {
+            background: #F52020;
+        }
+    
+        & .btn-detail {
+            position: relative;
+            top: 5px;
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+    
+            & button {
+                width: 115px;
+                height: 30px;
+                border: none;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+            }
+    
+            & .view-detail {
+                background: #1EC7FD;
+            }
+    
+            & .buy-book {
+                background: #33db62;
+
+                & span {
+                    margin-top: 5px;
+                }
+            }
+
+            & .view-detail:hover {
+                background: var(--btn-color-blue-hover);
+            }
+    
+            & .buy-book:hover {
+                background: #27a54b;
+            }
+        }
+    }
+}
+
+
+
+
+

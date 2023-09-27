@@ -1,0 +1,165 @@
+:root {
+    --sidebar-admin-primary-color: #5B07AE;
+    --sidebar-admin-secondary-color: #723ca7;
+    --sidebar-admin-profile-card-color: #490B86;
+}
+
+/*Top nav*/
+.top-nav-admin {
+    & .top-menubar {
+        position: relative ;
+        right: 0px;
+        width: 100%;
+        min-height: 90px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background: #760DC9;
+
+        & .notification {
+            position: relative;
+            right: 30px;
+
+            & button {
+                width: 65px;
+                height: 65px;
+                border: none;
+                border-radius: 50%;
+                background: transparent;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            & button:hover {
+                background: #610ba3;
+            }
+
+            & span {
+                font-size: 55px;
+                color: white;
+            }
+        }
+    }
+}
+
+
+/*Nev sidebar*/
+.menu-admin {
+    & .navbar {
+        position: fixed;
+        width: 350px;
+        height: 100vh;
+        background: var(--sidebar-admin-primary-color);
+        font-size: 20px;
+        color: white;
+        flex-direction: column;
+        border-radius: 2px;
+        z-index: 1;
+        transition: 0.5s;
+        
+        & .nav-list {
+            position: relative;
+            padding : 5px 10px;
+            text-align: center;
+
+            & .profile-card {
+                position: relative;
+                width: 300px;
+                height: 100px;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 10px;
+                display: flex;
+                justify-content: center;
+                background-color: var(--sidebar-admin-profile-card-color);
+                border-radius: 4%;
+
+                & .profile img {
+                    position: absolute;
+                    left: 15px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 80%;
+                    margin-top: 10px;
+                }
+
+                & .profile-detail {
+                    position: absolute;
+                    top: 15px;
+                    max-width: 188px;
+                    left:100px;
+                    flex-direction: column;
+                    display: flex;
+                    align-items: self-start;
+                    font-size: 14px;
+                    overflow: hidden;
+
+                    & h4{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                & .profile-card button:hover {
+                    background-color: var(--sidebar-admin-secondary-color);
+                }
+            }
+
+            & .nav-menu {
+                position: relative;
+                margin-top: 17px;
+                left: 10px;
+                width: 320px;
+                height: 50px;
+                border-radius: 10px;
+                display: flex;
+                align-items: self-start;
+                list-style-type: none;
+
+            }
+
+            & .nav-menu:hover {
+                background-color: var(--sidebar-admin-secondary-color);
+                transition: background-color 0.2s ease;
+            }
+
+            & .nav-menu span{
+                text-indent: 5px;
+                transform: translateY(7px);
+                font-size: 28px;
+            }
+
+            & .nav-menu button{
+                position: relative;
+                width: 320px;
+                height: 50px;
+                border: none;
+                border-radius: 10px;
+                display: flex;
+                background: transparent;
+                color: white;
+                cursor: pointer;
+            }
+
+            & .nav-menu p {
+                text-indent: 5px;
+                font-size: 20px;
+                transform: translateY(10px);
+            }
+        }
+    }
+}
+ 
+
+@media screen and (max-width:1050px){
+    .button-in {
+        margin-left: 75%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .button-in {
+        margin-left: 70%;
+    }
+}

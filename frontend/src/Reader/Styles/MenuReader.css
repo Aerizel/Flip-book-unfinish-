@@ -1,0 +1,409 @@
+:root {
+    --top-icon-position: 40px;
+    --menureader-primary-color: #0d5175;
+    --menureader-secondary-color: #42687d;
+    --menureader-profile-card-color: #0a4564;
+}
+
+/*topnav component*/
+.top-nav-reader {
+
+    .Top-menubar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-width: 100%;
+        min-height: 90px;
+        background-color: #70F1FF;
+
+        & .button-menu {
+            position: relative;
+            top: 5px;
+            left: var(--top-icon-position);
+            background: transparent;
+            border: none;
+            outline: none;
+
+            & .hamburger {
+                fill: white;
+            }
+            
+            & .hamburger:hover {
+                border: 3px solid white;
+                border-radius: 5px;
+            }
+        }
+        
+        & .cart {
+            position: relative;
+            height: 52px;
+            width: 60px;
+            top: 0px;
+            left: calc(var(--top-icon-position) + 40px);
+            border: none;
+            border-radius: 50px 50px;
+            background-color: #70F1FF;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            font-size: 40px;
+        }
+        
+        & .cart:hover {
+            background-color: #5ce1f0;
+        }
+        
+        & .notification {
+            position: relative;
+            height: 55px;
+            width: 60px;
+            top: 4px;
+            left: calc(var(--top-icon-position) + 70px);
+            border: none;
+            border-radius: 50px 50px;
+            background-color: #70F1FF;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            font-size: 45px;
+        }
+        
+        & .notification:hover {
+            background-color: #5ce1f0;
+        }
+        
+        & .button-in {
+            position: relative;
+            min-width: 200px;
+            min-height: 55px;
+            left: 85%;
+            background-color: #92D3E8;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            width: 100px;
+            transition: 0.3s;
+        }
+        
+        & .button-in:hover {
+          background-color: #7dcee9;
+        }
+        
+        & .button-in:focus {
+            outline: none;
+        }
+    }
+    
+    .Mid-menubar {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 7px;
+        overflow: hidden;
+        min-height: 60px;
+        justify-content: center;
+        gap: 15px;
+        background-color: #75E9F6;
+    }
+    
+    .menuTxt button{
+        border: none;
+        background: transparent;
+        display: inline-block;
+        color: white;   
+        padding: 10px; 
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.8px;
+        cursor: pointer;
+    }
+    
+    .container {
+        display: inline-block;
+        background-color: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        position: relative;
+        margin-top: 3px;
+        min-width: fit-content;
+        max-height:40px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .search-bar {
+        width: 100%;
+        max-width: 295px;
+        display: flex;
+        align-items: center;
+        padding:3px 20px;
+    }
+    
+    .search-bar input{
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 0px 0px;
+        font-size: 18px;
+        color:gray;
+    }
+    
+    ::placeholder {
+        color:gray;
+    }
+    
+    .search-bar button img{
+        width: 25px;
+    }
+    
+    .search-bar button {
+        border: none;
+        background-color: white;
+        width: 300px;
+        height: 35px;
+        border-radius: 60%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .search-bar button:hover {
+        background-color: rgb(232, 225, 225);
+    }
+}
+
+.top-nav-reader-open {
+    transform: translateY(0px);
+    transition: 0.3s;
+}
+
+.top-nav-reader-close {
+    transform: translateY(-160px);
+    transition: 0.3s;
+}
+
+/*Nav left side*/
+.menuReader {
+    & .navbar {
+        position: fixed;
+        width: 350px;
+        height: 100vh;
+        background: var(--menureader-primary-color);
+        font-size: 20px;
+        color: white;
+        flex-direction: column;
+        border-radius: 2px;
+        z-index: 100;
+        transition: 0.5s;
+        
+        & .nav-list {
+            position: relative;
+            padding : 6px 10px;
+            text-align: center;
+
+            & .close-menu button {
+                position: relative;
+                margin-top: 5px;
+                width: 100px;
+                height: 45px;
+                display: inline-block;
+                border: none;
+                border-radius: 50px;
+                background-color: var(--menureader-primary-color);
+                color: white;
+                font-size: 40px;
+                text-align: center;
+                padding: -10;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            & .close-menu button:hover {
+                background-color: var(--menureader-secondary-color);
+            }
+
+            & .profile-card {
+                position: relative;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 10px;
+                width: 300px;
+                height: 140px;
+                display: flex;
+                justify-content: center;
+                background-color: var(--menureader-profile-card-color);
+                border-radius: 4%;
+
+                & .profile {
+                    position: absolute;
+                    left: 15px;
+                    margin-top: 10px;
+                    display: flex;
+
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                & .profile-detail {
+                    position: absolute;
+                    top: 15px;
+                    max-width: 188px;
+                    left:100px;
+                    flex-direction: column;
+                    display: flex;
+                    align-items: self-start;
+                    font-size: 14px;
+                    overflow: hidden;
+
+                    & h4{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                & button{
+                    position: absolute;
+                    top:98px;
+                    width: 110px;
+                    height: 30px;
+                    border: none;
+                    border-radius: 5%;
+                    background-color: orange;
+                    color: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                }
+
+                & .profile-card button:hover {
+                    background-color: var(--menureader-secondary-color);
+                }
+            }
+
+            & .nav-menu {
+                position: relative;
+                margin-top: 27px;
+                left: 10px;
+                width: 320px;
+                height: 50px;
+                border-radius: 10px;
+                display: flex;
+                align-items: self-start;
+                list-style-type: none;
+
+                & span{
+                    text-indent: 5px;
+                    transform: translateY(7px);
+                    font-size: 30px;
+                }
+    
+                & li {
+                    text-indent: 5px;
+                    transform: translateY(10px);
+                }
+    
+                & button{
+                    position: relative;
+                    width: 320px;
+                    height: 50px;
+                    border: none;
+                    border-radius: 10px;
+                    display: flex;
+                    background: transparent;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                & p {
+                    text-indent: 5px;
+                    font-size: 20px;
+                    transform: translateY(10px);
+                }
+            }
+
+            & .nav-menu:hover {
+                background-color: var(--menureader-secondary-color);
+                transition: background-color 0.2s ease;
+            }
+        }
+    }
+
+    & .navbar-open {
+        transform: translateX(none);
+    }
+
+    & .navbar-close {
+        transform: translateX(-350px);
+    }
+}
+
+/*Switch page*/
+.switchToReader {
+    & .switch {
+        position: relative;
+        display: inline-block;
+        left: 10px;
+        width: 60px;
+        height: 34px;
+    }
+    
+    & .switch input {
+        opacity: 0;
+        width:  0;
+        height: 0;
+    }
+    
+    & .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        background-color: aquamarine;
+        transition: 0.4s;
+    }
+    
+    & .slider::before {
+        position : absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50px;
+        transition: 0.1s;
+    }
+    
+    & input:checked + .slider {
+        background-color: #ef5151;
+    }
+    
+    & input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+}
+
+@media screen and (max-width:1050px){
+    .button-in {
+        margin-left: 75%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .button-in {
+        margin-left: 70%;
+    }
+}

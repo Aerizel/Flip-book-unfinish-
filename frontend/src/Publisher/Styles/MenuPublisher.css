@@ -1,0 +1,272 @@
+:root {
+    --sidebar-primary-color: #BF502D;
+    --sidebar-secondary-color: #a3573f;
+    --sidebar-profile-card-color: #974025;
+}
+
+/*Top nav*/
+.top-nav-publisher {
+    & .top-menubar {
+        position: absolute;
+        right: 0px;
+        width: 100%;
+        min-height: 90px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background: #F67329;
+
+        & .notification {
+            position: relative;
+            right: 30px;
+
+            & button {
+                width: 65px;
+                height: 65px;
+                border: none;
+                border-radius: 50%;
+                background: transparent;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            & button:hover {
+                background: #c55e23;
+            }
+
+            & span {
+                font-size: 55px;
+                color: white;
+            }
+        }
+    }
+}
+
+.top-nav-publisher-open {
+    transform: translateY(0px);
+    transition: 0.3s;
+}
+
+.top-nav-publisher-close {
+    transform: translateY(-90px);
+    transition: 0.3s;
+}
+
+
+/*Nev sidebar*/
+.menuPublisher {
+    & .navbar {
+        position: fixed;
+        width: 350px;
+        height: 100vh;
+        background: var(--sidebar-primary-color);
+        font-size: 20px;
+        color: white;
+        flex-direction: column;
+        border-radius: 2px;
+        z-index: 1;
+        transition: 0.5s;
+        
+        & .nav-list {
+            position: relative;
+            padding : 6px 10px;
+            text-align: center;
+
+            & .close-menu button {
+                position: relative;
+                margin-top: 5px;
+                width: 100px;
+                height: 45px;
+                display: inline-block;
+                border: none;
+                border-radius: 50px;
+                background-color: var(--sidebar-primary-color);
+                color: white;
+                font-size: 40px;
+                text-align: center;
+                padding: -10;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            & .close-menu button:hover {
+                background-color: var(--sidebar-secondary-color);
+            }
+
+            & .profile-card {
+                position: relative;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 10px;
+                width: 300px;
+                height: 140px;
+                display: flex;
+                justify-content: center;
+                background-color: var(--sidebar-profile-card-color);
+                border-radius: 4%;
+
+                & .profile img {
+                    position: absolute;
+                    left: 15px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 80%;
+                    margin-top: 10px;
+                }
+
+                & .profile-detail {
+                    position: absolute;
+                    top: 15px;
+                    max-width: 188px;
+                    left:100px;
+                    flex-direction: column;
+                    display: flex;
+                    align-items: self-start;
+                    font-size: 14px;
+                    overflow: hidden;
+
+                    & h4{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                & button{
+                    position: absolute;
+                    top:98px;
+                    width: 110px;
+                    height: 30px;
+                    border: none;
+                    border-radius: 5%;
+                    background-color: orange;
+                    color: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                }
+
+                & .profile-card button:hover {
+                    background-color: var(--sidebar-secondary-color);
+                }
+            }
+
+            & .nav-menu {
+                position: relative;
+                margin-top: 27px;
+                left: 10px;
+                width: 320px;
+                height: 50px;
+                border-radius: 10px;
+                display: flex;
+                align-items: self-start;
+                list-style-type: none;
+
+            }
+
+            & .nav-menu:hover {
+                background-color: var(--sidebar-secondary-color);
+                transition: background-color 0.2s ease;
+            }
+
+            & .nav-menu span{
+                text-indent: 5px;
+                transform: translateY(7px);
+                font-size: 30px;
+            }
+
+            & .nav-menu li {
+                text-indent: 5px;
+                transform: translateY(10px);
+            }
+
+            /*With button*/
+            & .nav-menu button{
+                position: relative;
+                width: 320px;
+                height: 50px;
+                border: none;
+                border-radius: 10px;
+                display: flex;
+                background: transparent;
+                color: white;
+                cursor: pointer;
+            }
+
+            & .nav-menu p {
+                text-indent: 5px;
+                font-size: 20px;
+                transform: translateY(10px);
+            }
+        }
+    }
+
+    & .navbar-open {
+        transform: translateX(none);
+    }
+
+    & .navbar-close {
+        transform: translateX(-350px);
+    }
+}
+
+/*Switch page*/
+.switchToPublisher {
+    & .switch {
+        position: relative;
+        display: inline-block;
+        left: 10px;
+        width: 60px;
+        height: 34px;
+    }
+    
+    & .switch input {
+        opacity: 0;
+        width:  0;
+        height: 0;
+    }
+    
+    & .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        background-color: aquamarine;
+        transition: 0.1s;
+    }
+    
+    & .slider::before {
+        position : absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50px;
+        transition: 0.4s;
+    }
+    
+    & input:checked + .slider {
+        background-color: #ef5151;
+    }
+    
+    & input:checked + .slider:before {
+        transform: translateX(26px);
+    } 
+}
+
+@media screen and (max-width:1050px){
+    .button-in {
+        margin-left: 75%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .button-in {
+        margin-left: 70%;
+    }
+}

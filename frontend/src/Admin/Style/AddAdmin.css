@@ -1,0 +1,355 @@
+.add-admin {
+    position: relative;
+    width: calc(100% - 350px);
+    height: fit-content;
+    top: 2rem;
+    left: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .edit-header {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: self-start;
+        list-style-type: none;
+
+        & span {
+            transform: translateY(5px);
+            color: var(--text-color-first);
+            font-size: 32px;
+        }
+
+        & h1 {
+           text-indent: 10px;
+           color: var(--text-color-first);
+        }
+    }
+
+    & .add-admin-form {
+        position: relative;
+        width: 60%;
+        height: 50rem;
+        top: 3rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 20px 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: ease-in 0.5s;
+
+        & form {
+            position: relative;
+            width: 90%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        & .edit-pic {
+            position: relative;
+            width: 250px;
+            height: 90px;
+            top: 0;
+            border-radius: 20px;;
+            background: var(--change-profile-color);
+            box-shadow: 2px 1px 6px gray;
+    
+            & img {
+                position: absolute;
+                left: 15px;
+                top: 70px;
+                width: 70px;
+                height: 70px;
+                border-radius: 80%;
+                margin-top: -60px;
+            }
+    
+            & button {
+                position: absolute;
+                width: 135px;
+                height: 40px;
+                right: 18px;
+                background: transparent;
+                border: none;
+                border-radius: 10px;
+                color: var(--text-color-first);
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+    
+            & button:hover {
+                background: var(--btn-edit-select);
+                color: white;
+            }
+        }
+
+        & .edit-box {
+            position: relative;
+            width: 90%;
+            height: fit-content;
+            top: -30px;
+            flex-direction: row;
+            display: flex;
+            border-bottom: 2px solid gray;
+            font-size: 20px;
+    
+            & h4 {
+                color: var(--text-color-first);
+            }
+    
+            & p {
+                text-indent: 15px;
+                color: var(--text-color-secondary);
+            }
+    
+            & button {
+                position: absolute;
+                right: var(--btn-edit-right);
+                width: var(--btn-edit-width);
+                height: var(--btn-edit-height);
+                border: none;
+                border-radius: var(--btn-edit-radius);
+                background: transparent;
+                background-color: var(--btn-edit-select);
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            }
+    
+            & button:hover {
+                background-color: var(--btn-edit-select-hover);
+            }
+    
+            & .edit-select {
+                display: flex;
+                
+                & h4 {
+                    color: var(--text-color-first);
+                }
+        
+                & p {
+                    text-indent: 15px;
+                    color: var(--text-color-secondary);
+                }
+    
+            }
+    
+            & .edit-choice {
+                & .form-control {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+    
+                    & input {
+                        margin-left: 10px;
+                        width: 250px;
+                        background: transparent;
+                        border: 2px solid var(--text-color-secondary);
+                        border-radius: 12px;
+                        outline: none;
+                        font-size: 16px;
+                        color: var(--text-color-first);
+                        font-weight: 600;
+                        padding: 0 35px 0 5px;
+                    }
+    
+                    & input[type="date"] {
+                        width: 180px;
+                    }
+    
+                    & button{
+                        position: absolute;
+                        width: var(--btn-edit-width);
+                        height: var(--btn-edit-height);
+                        border: none;
+                        border-radius: var(--btn-edit-radius);
+                        background: transparent;
+                        color: white;
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+    
+                    & .submit {
+                        right: 130px;
+                        background-color: var(--btn-edit-submit);
+                    }
+    
+                    & .cancel {
+                        right: 30px;
+                        background-color: var(--btn-edit-cancel);
+                    }
+    
+                    & .submit:hover {
+                        background-color: var(--btn-edit-submit-hover);
+                    }
+    
+                    & .cancel:hover {
+                        background-color: var(--btn-edit-cancel-hover);
+                    }
+                }
+            }
+    
+            & button {
+                position: absolute;
+                right: var(--btn-edit-right);
+                width: var(--btn-edit-width);
+                height: var(--btn-edit-height);
+                border: none;
+                border-radius: var(--btn-edit-radius);
+                background: transparent;
+                background-color: var(--btn-edit-select);
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            }
+    
+            & .btn-edit-delete button{
+                background-color: var(--btn-edit-cancel);
+            
+            }
+    
+            & .btn-edit-delete button:hover{
+                background-color: var(--btn-edit-cancel-hover);
+            
+            }
+        }
+    }
+}
+
+.edit-alert-box-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.edit-alert-box {
+    width: 400px;
+    height: 255px;
+    z-index: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+
+    & h4 {
+        position: relative;
+        top: 15px;
+        color: var(--text-color-first);
+        font-size: 24px;
+    }
+
+    & .form-control {
+        position: relative;
+        transform: translateY(27px);
+        padding: 10px;
+
+        & label {
+            color: var(--text-color-first);
+            font-weight: 600;
+        }
+
+        & input {
+            margin-left: 10px;
+            width: 190px;
+            background: transparent;
+            border: 2px solid var(--text-color-secondary);
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            color: var(--text-color-first);
+            padding: 0 35px 0 5px;
+        }
+    }
+
+    & .form-control-picture {
+        position: relative;
+        transform: translateY(27px);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & label {
+            font-size: 14px;
+            color: var(--btn-edit-cancel);
+            font-weight: 600;
+        }
+
+        & input[type="file"]::file-selector-button {
+            position: relative;
+            border-radius: 4px;
+            padding: 0 18px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 22px;
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+            margin-right: 16px;
+            transition: background-color 200ms;
+            color: var(--text-color-first);
+        }
+          
+        & input[type="file"]::file-selector-button:hover {
+            background-color: #f3f4f6;
+        }
+    }
+
+    & .pwd-alert p {
+        position: relative;
+        transform: translateY(30px);
+        text-align: center;
+        color: var(--btn-edit-cancel);
+    }
+
+    & .alert-box-btn {
+        position: relative;
+        transform: translateY(22px);
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-edit-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-edit-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-edit-cancel);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-edit-cancel-hover);
+        }
+    }
+}

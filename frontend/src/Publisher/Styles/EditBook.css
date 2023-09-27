@@ -1,0 +1,961 @@
+:root {
+    --top-book-profile: 4rem;
+    --border-table-first: 3px solid gray;
+    --border-table-second: 2px solid rgb(188, 187, 187);
+    --text-color-first: #696969;
+    --text-color-secondary: #B4AEAE;
+    --btn-editbook-edit-color: #FFC81A;
+    --btn-editbook-edit-color-hover: #d7aa16;
+    --btn-editbook-delete-color: red;
+    --btn-editbook-delete-color-hover: #c20404;
+    --btn-editbook-submit: #5ACC36;
+    --btn-editbook-submit-hover: #3a8423;
+    --btn-color-blue: #1EC7FD;
+    --btn-color-blue-hover: #1babdc;
+    --btn-editbook-radius: 17px;
+    --btn-editbook-width: 70px;
+    --btn-editbook-height: 30px;
+    --btn-editbook-right: 30px;
+}
+
+.deletebook-confirm-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.deletebook-confirm {
+    width: 450px;
+    height: 290px;
+    z-index: 1;
+    flex-direction: column;
+    background: white;
+    border-radius: 5px;
+
+    & .delete-massage-alert {
+        position: relative;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 25px;
+        width: 90%;
+        height: 80px;
+        border: 2px solid var(--btn-edit-cancel);
+
+        & h5 {
+            display: flex;
+            justify-content: center;
+            color: var(--btn-edit-cancel);
+            font-size: 18px;
+        }
+
+        & p {
+            text-align: center;
+            color: var(--btn-edit-cancel);
+        }
+    }
+
+    & .form-control {
+        position: relative;
+        margin-left: 20px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        & label {
+            margin-left: 2px;
+            color: var(--btn-editbook-delete-color-hover);
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        & input {
+            width: 90%;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid var(--text-color-secondary);
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            color: var(--text-color-first);
+            padding: 0 35px 0 5px;
+        }
+    }
+
+    & .pwd-alert p {
+        position: relative;
+        margin-top: 5px;
+        text-align: center;
+        color: var(--btn-edit-cancel);
+    }
+
+    & .editbook-box-btn {
+        position: relative;
+        margin-top: 20px;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-edit-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-edit-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-edit-cancel);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-edit-cancel-hover);
+        }
+    }
+}
+
+.edit-bookcover-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.edit-bookcover {
+    width: 390px;
+    height: 240px;
+    z-index: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+
+    & h4 {
+        color: var(--text-color-first);
+        font-size: 24px;
+    }
+
+    & .form-control-file {
+        transform: translateY(10px);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        & label {
+            color: var(--text-color-first);
+            font-weight: 600;
+        }
+
+        & input[type="file"]::file-selector-button {
+            position: relative;
+            border-radius: 4px;
+            padding: 0 16px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 22px; 
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+            margin-right: 16px;
+            transition: background-color 200ms;
+            color: var(--text-color-first);
+        }
+          
+        & input[type="file"]::file-selector-button:hover {
+            background-color: #f3f4f6;
+        }
+    }
+
+    & .alert-box-btn {
+        margin-top: 15px;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & button {
+            position: relative;
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: var(--btn-editbook-radius);
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-editbook-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-editbook-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-editbook-delete-color);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-editbook-delete-color-hover);
+        }
+    }
+}
+
+.manage-detail {
+    position: relative;
+    width: calc(100% - 350px);
+    height: auto;
+    left: 350px;
+    display: flex;
+    justify-content: center;
+
+    & h1 {
+        position: absolute;
+        text-align: center;
+        color: var(--text-color-first);
+    }
+
+    & .manage-detail-card {
+        position: absolute;
+        top: 80px;
+        width: 80%;
+        height: auto;
+        border-radius: 20px 20px;
+        background: transparent;
+        box-shadow: 0px 0px 10px gray;
+
+        & .text-group {     
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & .view b {
+                color : rgb(255, 85, 0);
+            }
+
+            & button {
+                margin-left: 10px;
+                width: 70px;
+                height: 30px;
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 17px;
+                background: transparent;
+                background : var(--btn-editbook-edit-color);
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            & button:hover {
+                background: var(--btn-editbook-edit-color-hover);
+            }
+
+            & .button-edit,.button-view {
+                margin-left: 10px;
+                width: 85px;
+                height: 30px;
+                gap: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 17px;
+                background: transparent;
+                background : var(--btn-color-blue);
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            & .button-edit:hover,.button-view:hover {
+                background: var(--btn-color-blue-hover);
+            }
+            
+            & .button-view {
+                width: 120px;
+                background : rgb(255, 119, 0);
+            }
+
+            & .button-view:hover {
+                width: 120px;
+                background : rgb(212, 101, 4);
+            }
+            
+        }
+
+        & .book-profile {
+            margin-top: var(--top-book-profile);
+            gap: 30px;
+            display: flex;
+            justify-content: center;
+
+            & .editbook-img {
+                position: relative;
+                width: 300px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & button {
+                    position: absolute;
+                    margin-left: 10px;
+                    width: 110px;
+                    height: 30px;
+                    gap: 5px;
+                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    border-radius: 17px;
+                    background: transparent;
+                    background : var(--btn-editbook-edit-color);
+                    color: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+    
+                & button:hover {
+                    background: var(--btn-editbook-edit-color-hover);
+                }
+
+                & img {
+                    position: relative;
+                    width: 300px;
+                    height: 400px;
+                }
+            }
+                
+            & .detail-text {
+                position: relative;
+                width: auto;
+                top: 0;
+                line-height: 1.6;
+                color: var(--text-color-first);
+
+                & .editbook-group {
+                    padding-bottom: 15px;
+
+                    & .editbook-detail {
+                        width: 512px;
+                        height: 47px;
+                        border: 1px solid var(--text-color-secondary);
+                        border-radius: 8px;
+
+                        & .form-control {
+                            margin-top: 8px;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+            
+                            & input {
+                                margin-left: 8px;
+                                width: 250px;
+                                background: transparent;
+                                border: 1px solid var(--text-color-secondary);
+                                border-radius: 7px;
+                                outline: none;
+                                font-size: 16px;
+                                color: var(--text-color-first);
+                                padding: 0 35px 0 5px;
+                            }
+
+                            & select {
+                                margin-left: 5px;
+                                border-radius: 5px 5px;
+                            }
+            
+                            & button {
+                                margin-left: 5px;
+                                width: 50px;
+                                height: 30px;
+                                border: none;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 12px;
+                                background: transparent;
+                                color: white;
+                                cursor: pointer;
+                            }
+            
+                            & .submit {
+                                right: 130px;
+                                font-size: 18px;
+                                background-color: var(--btn-editbook-submit);
+                            }
+            
+                            & .cancel {
+                                right: 30px;
+                                font-size: 24px;
+                                background-color: var(--btn-editbook-delete-color);
+                            }
+            
+                            & .submit:hover {
+                                background-color: var(--btn-editbook-submit-hover);
+                            }
+            
+                            & .cancel:hover {
+                                background-color: var(--btn-editbook-delete-color-hover);
+                            }
+                        }
+                    }
+
+                    & .editbook-detail.agerestrict {
+
+                        width: 522px;
+
+                        & h4 {
+                            font-size: 14px;
+                        }
+                    }
+
+                    & .editbook-detail.price {
+
+                        & input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;         
+                        }
+
+                        & input {
+                            width: 100px;   
+                        }
+                    }
+                }
+    
+                & .text-group {     
+                    display: flex;
+                }
+
+            }
+
+            & .del-book {
+                width: 190px;
+                height: 40px;
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 8px;
+                background: transparent;
+                background : var(--btn-editbook-delete-color);
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            & .del-book:hover {
+                background: var(--btn-editbook-delete-color-hover);
+            }
+
+            & .btn-choice {
+                gap: 10px;
+                display: flex;
+                flex-direction: row;
+                
+                & .request-for-sell {
+                    width: 190px;
+                    height: 40px;
+                    gap: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    border-radius: 8px;
+                    background: transparent;
+                    background : rgb(137, 210, 29);
+                    color: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+    
+                & .request-for-sell:hover {
+                    background: rgb(115, 175, 26);
+                }
+            }
+        }
+    
+        & .prologue {
+            width: 90%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--text-color-first);
+
+            & .edit-prologue {
+                display: flex;
+                flex-direction: column;
+
+                & .text-group.prologue-edit {
+                    display: flex;
+                    flex-direction: row;
+                    align-self: center;
+    
+                    & button {
+                        margin-left: 5px;
+                        width: 50px;
+                        height: 30px;
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 12px;
+                        background: transparent;
+                        color: white;
+                        cursor: pointer;
+                    }
+    
+                    & .submit {
+                        right: 130px;
+                        font-size: 18px;
+                        background-color: var(--btn-editbook-submit);
+                    }
+    
+                    & .cancel {
+                        right: 30px;
+                        font-size: 24px;
+                        background-color: var(--btn-editbook-delete-color);
+                    }
+    
+                    & .submit:hover {
+                        background-color: var(--btn-editbook-submit-hover);
+                    }
+    
+                    & .cancel:hover {
+                        background-color: var(--btn-editbook-delete-color-hover);
+                    }
+                }
+
+                & textarea {
+                    margin-top: 10px;
+                    font-size: 16px;
+                }
+
+            }
+
+            & .text-group.prologue {
+                margin-top: 0px;
+                display: flex;
+                flex-direction: row;
+
+                & h3 {
+                    font-weight: 100;
+                }
+
+                & button {
+                    margin-top: -5px;
+                }
+            }
+    
+            & p {
+                padding: 10px;
+                text-align: center;
+            }
+    
+            & .cut-off-text {
+                --max-line: 3;
+                --line-height: 2.4;
+    
+                max-height: calc(var(--max-line) * 16px * var(--line-height));
+                line-height: var(--line-height);
+                position: relative;
+                overflow: hidden;
+            }
+    
+            & .cut-off-text:has(+ .expand-btn:not(:checked))::before {
+                position: absolute;
+                content: "";
+                height: calc(16px * var(--line-height));
+                width: 100%;
+                bottom: 0;
+                background: linear-gradient(to bottom,transparent,white);
+            }
+    
+            & .expand-btn {
+                position: relative;
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 15%;
+                appearance: none;
+                padding: .5em;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                color: var(--text-color-first);
+                font-size: 16px;
+            }
+    
+            & .expand-btn:hover {
+                color: var(--text-color-secondary);
+            }
+    
+            & .expand-btn::before {
+                content: "อ่านต่อเพิ่ม";
+                margin-top: 0px;
+            }
+    
+            & .expand-btn:checked::before {
+                content: "ย่อข้อความลง";
+                margin-top: 0px;
+            }
+    
+            & .cut-off-text:has(+ .expand-btn:checked) {
+                max-height: none;
+            }
+            
+            & .seperate-line {
+                position: relative;
+                display: flex;
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 100%;
+                top:0px;
+                border-bottom: 2px solid var(--text-color-secondary);
+            }
+        }
+    
+        & .chapter {
+            width: 100%;
+            margin-top: 40px;
+            padding-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            & .up-book {
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 160px;
+                height: 40px;
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 8px;
+                background: transparent;
+                background : var(--btn-color-blue);
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+
+                & span {
+                    margin-bottom: -8px;
+                    font-size: 28px;
+                }
+            }
+
+            & button:hover {
+                background: var(--btn-color-blue-hover);
+            }
+
+            & .book-chapter {
+                width: 90%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                border-bottom: 1px solid var(--text-color-secondary);
+               
+                & button {
+                    width: 80%;
+                    height: 70px;
+                    margin-top: 15px;
+                    color: var(--text-color-first);
+                    border: none;
+                    background: transparent;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 16px;
+                    cursor: pointer;
+        
+                    & .ep {
+                        width: 15%;
+                    }
+        
+                    & .ep-name {
+                        width: 55%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+        
+                    & .ep-view {
+                        width: 15%;
+                        gap: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+        
+                        & span {
+                            margin-top: 7px;
+                            font-size: 25px;
+                        }
+                    }
+        
+                    & .ep-date {
+                        width: 15%;
+                        text-align: left;
+                    }
+                }
+        
+                & button:hover {
+                    background: #f8f6f6;
+                }
+
+                & .btn {
+                    width: 20%;
+                    margin-top: 15px;
+                    gap: 8px;
+                    display: flex;
+                    flex-direction: row;
+
+                    & .btn-edit {
+                        width: 70px;
+                        height: 40px;
+                        gap: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        border-radius: 20px;
+                        background: transparent;
+                        background : var(--btn-editbook-edit-color);
+                        color: white;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+
+                    & .btn-edit:hover {
+                        background: var(--btn-editbook-edit-color-hover);
+                    }
+
+                    & .btn-del {
+                        width: 60px;
+                        height: 40px;
+                        gap: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        border-radius: 20px;
+                        background: transparent;
+                        background : var(--btn-editbook-delete-color);
+                        color: white;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+
+                    & .btn-del:hover {
+                        background: var(--btn-editbook-delete-color-hover);
+                    }
+                }
+            }
+
+            & h2 {
+                margin-top: 40px;
+                text-align: center;
+                color: var(--text-color-secondary);
+            }
+        }   
+    }
+}
+
+.bookedit-box-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.chapter-box {
+    width: 450px;
+    z-index: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+
+    & h4 {
+        color: var(--text-color-first);
+        font-size: 24px;
+    }
+
+    & .form-control {
+        transform: translateY(10px);
+        padding: 10px;
+
+        & label {
+            color: var(--text-color-first);
+            font-weight: 600;
+        }
+
+        & input {
+            margin-left: 5px;
+            width: 190px;
+            background: transparent;
+            border: 1px solid var(--text-color-secondary);
+            border-radius: 7px;
+            outline: none;
+            font-size: 16px;
+            color: var(--text-color-first);
+            padding: 0 35px 0 5px;
+        }
+    }
+
+    & .form-control.ep {
+        & input {
+            margin-left: 5px;
+            width: 120px;
+            padding: 0 5px 0 5px;
+        }
+    }
+
+    & .input-alert p {
+        transform: translateY(10px);
+        display: flex;
+        text-align: center;
+        color: var(--btn-edit-cancel);
+    }
+
+    & .form-control-file {
+        transform: translateY(10px);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        & label {
+            color: var(--text-color-first);
+            font-weight: 600;
+        }
+
+        & input[type="file"]::file-selector-button {
+            position: relative;
+            border-radius: 4px;
+            padding: 0 16px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 22px; 
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+            margin-right: 16px;
+            transition: background-color 200ms;
+            color: var(--text-color-first);
+        }
+          
+        & input[type="file"]::file-selector-button:hover {
+            background-color: #f3f4f6;
+        }
+    }
+
+    & .alert-box-btn {
+        margin-top: 15px;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & button {
+            position: relative;
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: var(--btn-editbook-radius);
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-editbook-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-editbook-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-editbook-delete-color);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-editbook-delete-color-hover);
+        }
+    }
+
+}
+
+.chapter-box.upload {
+    height: 330px;
+}
+
+.chapter-box.edit {
+    height: 300px;
+}

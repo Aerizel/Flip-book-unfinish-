@@ -1,0 +1,698 @@
+:root {
+    --text-color-first: #696969;
+    --text-color-secondary: #B4AEAE;
+    --btn-border-radius: 8px 8px;
+    --btn-color-blue: #1EC7FD;
+    --btn-color-blue-hover: #1babdc;
+    --top-book-detail-position: 40px;
+}
+
+.Book-detail {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 40px;
+    width: 800px;
+    height: auto;
+    border-radius: 20px 20px;
+    background: transparent;
+    box-shadow: 0px 0px 10px gray;
+
+    & .book-profile {
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .book-pic {
+        & img {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            top: var(--top-book-detail-position);
+            box-shadow: 0px 0px 10px gray;
+        }
+    }
+
+    & .Book-desc {
+        position: relative;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .detail-text {
+            line-height: 2.2;
+            color: var(--text-color-first);
+
+            & p {
+                border-bottom: 2px solid var(--text-color-secondary);
+            }
+
+        }
+
+        & .btn-like-book {
+            position: relative;
+            top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            & button {
+                height: 40px;
+                border: none;
+                border-radius: var(--btn-border-radius);
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+            }
+
+            & .switch-mode {
+                top: 30px;
+                display: flex;
+                justify-content: center;
+
+                & .like,
+                .dislike {
+                    height: 40px;
+                    width: 100px;
+                    border-bottom: 3px solid var(--mode-not-active);
+                    display: flex;
+                    justify-content: center;
+                    transition: ease-in-out 0.3s;
+
+                    & button {
+                        width: 100%;
+                        transform: translateY(-1px);
+                        border: none;
+                        background: transparent;
+                        font-size: 16px;
+                        cursor: pointer;
+                        color: var(--mode-not-active);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        & span {
+                            margin-left: -5px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+
+                & .like:hover,
+                .dislike:hover {
+                    & button {
+                        color: var(--btn-not-active);
+                        transition: 0.1s;
+                    }
+                }
+
+                & .like.active {
+
+                    border-bottom: 3px solid var(--btn-color-blue);
+                    background: transparent;
+
+                    & button {
+                        font-weight: 800;
+                        color: var(--btn-color-blue);
+                    }
+                }
+
+                & .dislike.active {
+                    border-bottom: 3px solid red;
+                    background: transparent;
+
+                    & button {
+                        font-weight: 800;
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        & .btn-buy-follow-share {
+            position: relative;
+            top: 45px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            & button {
+                height: 40px;
+                border: none;
+                border-radius: var(--btn-border-radius);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+            }
+
+            & .follow {
+                width: 160px;
+                border-radius: 30px 30px;
+                border: 2px solid var(--text-color-secondary);
+                background: transparent;
+                color: var(--text-color-first);
+                transition: 0.3s;
+
+                & span {
+                    margin: 0px 5px -9px 0px;
+                    font-size: 25px;
+                    color: var(--text-color-first);
+                }
+            }
+
+            & .follow:hover {
+                border: none;
+                background: var(--text-color-first);
+                color: white;
+
+                & span {
+                    color: white;
+                }
+            }
+
+            & .notfollow-notbuy {
+
+                & .buy-book {
+                    width: 130px;
+                    border-radius: 30px 30px;
+                    gap: 5px;
+                    background: transparent;
+                    border: 2px solid #33db62;
+                    color: #33db62;
+                    transition: ease-in-out 0.3s;
+
+                    & span {
+                        margin-top: 3px;
+                    }
+                }
+
+                & .buy-book:hover {
+                    border: none;
+                    background: #27a54b;
+                    color: white;
+                }
+
+                & .notfollow {
+                    width: 150px;
+                    border-radius: 30px 30px;
+                    gap: 5px;
+                    background: transparent;
+                    border: 2px solid var(--btn-color-blue);
+                    color: var(--btn-color-blue);
+                    transition: ease-in-out 0.3s;
+                }
+
+                & .notfollow:hover {
+                    border: none;
+                    background: var(--btn-color-blue-hover);
+                    color: white;
+                }
+
+            }
+
+            & .share {
+                width: 70px;
+                border: none;
+                border-radius: 30px 30px;
+                gap: 5px;
+                background: transparent;
+                border: 2px solid var(--text-color-secondary);
+                color: var(--text-color-first);
+                transition: ease-in-out 0.3s;
+            }
+
+            & .share:hover {
+                border: none;
+                background: var(--text-color-first);
+                color: white;
+            }
+        }
+
+    }
+
+    & .text-owner {
+        top: 70px;
+        position: relative;
+        text-align: center;
+        font-weight: 100;
+        color: var(--text-color-first);
+    }
+
+    & .book-owner {
+        position: relative;
+        width: 90%;
+        height: 100px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 85px;
+        gap: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        & .seperate-line {
+            position: relative;
+            height: 100%;
+            border-left: 2px solid var(--text-color-secondary);
+        }
+
+        & .profile-card {
+            position: relative;
+            width: 210px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 2%;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            background: var(--change-profile-color);
+            box-shadow: -1px 1px 6px gray;
+
+            & img {
+                position: absolute;
+                width: 65px;
+                height: 65px;
+                left: 8px;
+                top: 5px;
+                border-radius: 50%;
+            }
+
+            & .profile-detail {
+                position: absolute;
+                width: 100px;
+                right: 25px;
+
+                & p {
+                    font-size: 15px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    color: var(--text-color-first);
+                }
+
+                & button {
+                    border: none;
+                    background: transparent;
+                    font-size: 16px;
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        & .donate {
+            position: relative;
+
+            & .btn-donate {
+                height: 40px;
+                width: 210px;
+                display: flex;
+                align-items: center;
+                border: none;
+                border-radius: var(--btn-border-radius);
+                background: transparent;
+                background: orange;
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+            }
+
+            & span {
+                margin: 0px 10px -5px 10px;
+                font-size: 25px;
+            }
+
+            & .btn-donate:hover {
+                background: rgb(216, 142, 5);
+            }
+        }
+    }
+
+    & .prologue {
+        width: 90%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        margin-top: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--text-color-first);
+
+        & h3 {
+            text-align: center;
+            font-weight: 100;
+        }
+
+        & p {
+            padding: 10px;
+            text-align: center;
+        }
+
+        & .cut-off-text {
+            --max-line: 3;
+            --line-height: 2.4;
+
+            max-height: calc(var(--max-line) * 16px * var(--line-height));
+            line-height: var(--line-height);
+            position: relative;
+            overflow: hidden;
+        }
+
+        & .cut-off-text:has(+ .expand-btn:not(:checked))::before {
+            position: absolute;
+            content: "";
+            height: calc(16px * var(--line-height));
+            width: 100%;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, white);
+        }
+
+        & .expand-btn {
+            position: relative;
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 15%;
+            appearance: none;
+            padding: .5em;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            color: var(--text-color-first);
+            font-size: 16px;
+        }
+
+        & .expand-btn:hover {
+            color: var(--text-color-secondary);
+        }
+
+        & .expand-btn::before {
+            content: "อ่านต่อเพิ่ม";
+            margin-top: 0px;
+        }
+
+        & .expand-btn:checked::before {
+            content: "ย่อข้อความลง";
+            margin-top: 0px;
+        }
+
+        & .cut-off-text:has(+ .expand-btn:checked) {
+            max-height: none;
+        }
+
+        & .seperate-line {
+            position: relative;
+            display: flex;
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+            top: 0px;
+            border-bottom: 2px solid var(--text-color-secondary);
+        }
+    }
+
+    & .none-prologue {
+        padding-bottom: 3rem;
+    }
+
+    & .chapter {
+        width: 100%;
+        margin-top: 40px;
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    & .book-chapter {
+        width: 100%;
+
+        & button {
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 90%;
+            height: 70px;
+            color: var(--text-color-first);
+            border: none;
+            border-bottom: 1px solid var(--text-color-secondary);
+            background: transparent;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 16px;
+            cursor: pointer;
+
+            & .ep {
+                width: 15%;
+            }
+
+            & .ep-name {
+                width: 60%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            & .ep-view {
+                width: 20%;
+                gap: 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                & span {
+                    margin-top: 7px;
+                    font-size: 25px;
+                }
+            }
+
+            & .ep-icon {
+                font-size: 25px;
+            }
+
+            & .ep-date {
+                width: 20%;
+                text-align: right;
+            }
+        }
+
+        & button:hover {
+            background: #f8f6f6;
+        }
+    }
+
+    & .comment {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        padding-bottom: 2rem;
+
+        & h2 {
+            gap: 10px;
+            border-bottom: 1px solid var(--text-color-secondary);
+            color: var(--text-color-first);
+            display: flex;
+            align-items: center;
+        }
+
+        & h3 {
+            margin-top: 20px;
+            padding-bottom: 1rem;
+            color: var(--text-color-secondary);
+            text-align: center;
+        }
+
+        & .send-message {
+            position: relative;
+            height: 45px;
+            margin: 20px 0;
+            border: 2px solid var(--text-color-secondary);
+            border-radius: 10px 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & form {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+
+            & input {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                color: var(--text-color-first);
+                font-weight: 400;
+                padding: 0 35px 0 5px;
+            }
+
+            & button {
+                width: 120px;
+                height: 30px;
+                gap: 5px;
+                margin-right: 5px;
+                border: none;
+                border-radius: 10px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--btn-color-blue);
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+            }
+
+            & button:hover {
+                background: var(--btn-color-blue-hover);
+            }
+        }
+
+        & .show-message {
+            height: auto;
+            padding-bottom: 10px;
+
+            & .user-info {
+                gap: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                & .profile-group {
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: row;
+
+                    & img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+
+                    & .name-date {
+                        display: flex;
+                        flex-direction: column;
+                        color: var(--text-color-first);
+
+                        & p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                & .comment-option {
+
+                    & .dropbtn {
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 10px;
+                        border: none;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: transparent;
+                        font-size: 25px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                    }
+
+                    & .dropbtn:hover {
+                        background: gainsboro;
+                    }
+
+                    .dropdown-content {
+                        position: absolute;
+                        float: left;
+                        margin-top: -40px;
+                        margin-left: -160px;
+                        border-radius: 10px 10px;
+                        display: none;
+                        background-color: #f9f9f9;
+                        min-width: 160px;
+                        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+
+                        & li {
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            border-radius: 10px 10px;
+                            display: block;
+                            color: var(--text-color-first);
+                            cursor: pointer;
+                        }
+
+                        & li:hover {
+                            background-color: gainsboro;
+                            color: white;
+                        }
+                    }
+
+                    & .option {
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 10px;
+                        border: none;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: transparent;
+                        font-size: 25px;
+                        transition: 0.3s;
+                    }
+
+                    & .option:hover {
+                        background: gainsboro;
+                    }
+
+                    & .clickbox {
+                        position: absolute; 
+                        width: 40px;
+                        height: 40px;
+                        margin-top: -35px;
+                        opacity: 0;
+                        cursor: pointer;
+                    }    
+                      
+                    & .clickbox:checked + .dropdown-content {
+                        display: block;
+                    }
+
+                }
+
+            }
+
+            & .message {
+                width: 90%;
+                height: auto;
+                margin-top: 2px;
+                margin-left: 50px;
+                color: var(--text-color-first);
+            }
+
+        }
+
+    }
+}

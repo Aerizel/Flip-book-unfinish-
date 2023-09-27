@@ -1,0 +1,102 @@
+:root {
+    --text-color-first: #696969;
+    --text-color-secondary: #B4AEAE;
+    --btn-color-blue: #1EC7FD;
+    --btn-color-blue-hover: #1babdc;
+}
+
+.admin-view-content {
+    position: relative;
+    width: calc(100% - 350px);
+    height: fit-content;
+    top: 2rem;
+    left: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .select-ep {
+        & .select-ch {
+            position: relative;
+            gap: 20px;
+            padding: 0 5px;
+            display: flex;
+            flex-direction: row;
+    
+            & button {
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 5%;
+                background: var(--btn-color-blue);
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+    
+            & button:hover {
+                background: var(--btn-color-blue-hover);
+            }
+    
+            & span {
+                margin:0px 0px -5px 0px;
+                font-size: 20px;
+            }
+    
+            & .previous,.next {
+                width: 100px;
+                gap: 2px;
+            }
+    
+            & .back-to-book {
+                width: 170px;
+                gap: 5px;
+            }
+        }
+    } 
+    
+    & .name-chapter {
+        position: relative;
+    
+        & h1,h3,.select-ep.top {
+            position: relative;
+            top: 40px;
+            display: flex;
+            justify-content: center;
+            color: var(--text-color-first);
+        }  
+        
+        & h3 {
+            padding: 5px;
+        }
+    
+        & .select-ep.top {
+            padding: 8px;
+        }
+    
+    }
+    
+    .select-ep.bottom {
+        position: relative;
+        top: 40px;
+        display: flex;
+        justify-content: center;
+        color: var(--text-color-first);
+    }
+    
+    
+    .content {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+

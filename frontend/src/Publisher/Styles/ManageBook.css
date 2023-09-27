@@ -1,0 +1,89 @@
+:root {
+    --border-table-first: 3px solid gray;
+    --border-table-second: 2px solid rgb(188, 187, 187);
+    --text-color-first: #696969;
+    --text-color-secondary: #B4AEAE;
+    --mode-not-active : #d8d5d5;
+    --btn-not-active : #909090;
+    --label-color-first : red;
+    --btn-color-blue: #1EC7FD;
+    --btn-color-blue-hover: #1babdc;
+}
+
+.manage-title {
+    position: relative;
+    width: calc(100% - 350px);
+    height: fit-content;
+    left: 350px;
+    display: flex;
+    justify-content: center;
+
+    & h1 {
+        position: relative;
+        text-align: center;
+        color: var(--text-color-first)
+    }
+
+    & .manage-content {
+        position: absolute;
+        margin-top: 60px;
+        width: 90%;
+        height: 20rem;
+        top: 10px;
+        /*border: 2px solid gray;*/
+
+        & .content-table {
+            position: relative;
+            width: 100%;
+            color: var(--text-color-first);
+
+            & table {
+                width: 100%;
+                /*border: var(--border-table);*/
+                border-spacing: 0;
+
+                & th,td {
+                    padding: 10px 10px;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                & th {
+                    border-bottom: var(--border-table-first);
+                }
+
+                & td {
+                    border-bottom: var(--border-table-second);
+
+                    & img {
+                        width: 60px;
+                        width: 60px;
+                        border-radius: 8% 8%;
+                    }
+
+                    & button {
+                        width: 85px;
+                        height: 35px;
+                        border: none;
+                        border-radius: 5% 5%;
+                        background: var(--btn-color-blue);
+                        color: white;
+                        font-size: 14px;
+                        cursor: pointer;
+                    }
+
+                    & button:hover {
+                        background: var(--btn-color-blue-hover);
+                    }
+                }
+            }
+
+            & h2 {
+                margin-top: 5rem;
+                text-align: center;
+                color: var(--text-color-secondary);
+            }
+        }
+    }
+}
+

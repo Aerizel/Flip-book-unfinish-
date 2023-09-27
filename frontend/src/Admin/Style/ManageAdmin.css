@@ -1,0 +1,191 @@
+.manage-admin {
+    position: relative;
+    width: calc(100% - 350px);
+    height: fit-content;
+    top: 2rem;
+    left: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+        position: relative;
+        text-align: center;
+        color: var(--text-color-first)
+    }
+
+    & .create-admin {
+        position: relative;
+        width: 140px;
+        height: 40px;
+        top: 20px;
+        gap: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 10px 10px;
+        background: var(--btn-color-blue);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+
+        & span {
+            margin-top: 5px;
+            font-size: 20px;
+        }
+    }
+
+    & .create-admin:hover {
+        background: var(--btn-color-blue-hover);
+    }
+
+    & .manage-content {
+        position: relative;
+        margin-top: 30px;
+        width: 90%;
+        height: 20rem;
+        top: 15px;
+
+        & .content-table {
+            position: relative;
+            width: 100%;
+            color: var(--text-color-first);
+
+            & table {
+                width: 100%;
+                border-spacing: 0;
+
+                & th,
+                td {
+                    padding: 10px 10px;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                & th {
+                    border-bottom: var(--border-table-first);
+                }
+
+                & td {
+                    border-bottom: var(--border-table-second);
+
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 80%;
+                    }
+
+                    & button {
+                        width: 85px;
+                        height: 35px;
+                        border: none;
+                        border-radius: 10px 10px;
+                        color: white;
+                        font-size: 14px;
+                        cursor: pointer;
+                    }
+
+                    & .btn-edit {
+                        background: var(--btn-edit-select);
+                    }
+
+                    & .btn-edit:hover {
+                        background: var(--btn-edit-select-hover);
+                    }
+
+                    & .btn-delete {
+                        background: var(--btn-edit-cancel);
+                    }
+
+                    & .btn-delete:hover {
+                        background: var(--btn-edit-cancel-hover);
+                    }
+                }
+            }
+
+            & h2 {
+                margin-top: 5rem;
+                text-align: center;
+                color: var(--text-color-secondary);
+            }
+        }
+    }
+}
+
+.delete-admin-box-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.delete-admin-box {
+    width: 400px;
+    height: 255px;
+    z-index: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px grey;
+
+    & h5 {
+        margin-top: 15px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        color: var(--btn-edit-cancel);
+        font-size: 18px;
+    }
+
+    & p {
+        margin-top: 20px;
+        width: 90%;
+        text-align: center;
+        color: var(--btn-edit-cancel);
+    }
+
+    & .alert-box-btn {
+        position: relative;
+        margin-top: 30px;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;    
+        }
+
+        & .submit {
+            background-color: var(--btn-edit-submit);
+        }
+
+        & .submit:hover {
+            background-color: var(--btn-edit-submit-hover);
+        }
+
+        & .cancel {
+            background-color: var(--btn-edit-cancel);
+        }
+
+        & .cancel:hover {
+            background-color: var(--btn-edit-cancel-hover);
+        }
+    }
+}

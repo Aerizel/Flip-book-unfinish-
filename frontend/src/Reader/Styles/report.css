@@ -1,0 +1,405 @@
+
+.report-to-admin {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+        color: var(--text-color-first);
+    }
+
+    & .report-to-admin-form {
+        position: relative;
+        width: 35rem;
+        height: auto;
+        top: 40px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        & .input-box-up {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            margin: 35px 0;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid gray;
+
+            & .up-label {
+                position: relative;
+                top: 2px;
+                color: var(--label-color-first);
+            }  
+
+            & input {
+                width: 100%;
+                height: 100%;
+                margin-top: 20px;
+                background: transparent;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                color: var(--text-color-first);
+                font-weight: 400;
+                padding: 0 35px 0 5px;
+            }
+
+            & input::placeholder {
+                font-size: 18px;
+                color: var(--text-color-secondary);
+                font-weight: 400;
+            }
+
+            & input[type="file"]::file-selector-button {
+                border-radius: 4px;
+                padding: 0 16px;
+                height: 25px;
+                cursor: pointer;
+                background-color: white;
+                border: 1px solid rgba(0, 0, 0, 0.16);
+                box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+                margin-right: 16px;
+                transition: background-color 200ms;
+                color: var(--text-color-first);
+            }
+              
+            & input[type="file"]::file-selector-button:hover {
+                background-color: #f3f4f6;
+            }
+
+            & input[type="number"] {
+                position: relative;
+                width: 35%;
+            }
+
+            & select,textarea {
+                position: relative;
+                top: 20px;
+            }
+
+            & select {
+                border-radius: 5px 5px;
+                font-size: 16px;
+            }
+
+        }
+
+        & .input-box-up.pdfdetail {
+            height: 280px;
+        }
+
+        & .input-box-up.area {
+            height: 140px;
+        }
+
+        & p {
+            text-align: center;
+            color: blue;
+            font-weight: 600;
+        }
+
+        & .btn-create-report {
+            width: 100%;
+            height: 45px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            background-color: var(--btn-color-blue);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        & .btn-create-report:hover {
+            background-color: var(--btn-color-blue-hover);
+        }
+
+        & .bottom-gap {
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+.report-detail-user {
+    position: relative;
+    height: auto;
+    top: 2rem;
+
+    & h1 {
+        position: relative;
+        text-align: center;
+        color: var(--text-color-first);
+    }
+
+    & .report-content {
+        position: relative;
+        width: 50%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 3rem;
+        border: 3px solid var(--text-color-secondary);
+        border-radius: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & p,h4 {
+            font-size: 18px;
+            color: var(--text-color-first);
+        }
+
+        & .report-element {
+            position: relative;
+            left: 15px;
+            padding-bottom: 30px;
+            gap: 5px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        & .report-element.owner {
+            margin-top: 20px;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+
+            & .profile {
+                width: 180px;
+                height: 80px;
+                border-radius: 20px;
+                background: var(--change-profile-color);
+                box-shadow: 2px 1px 6px gray;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                & img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 80%;
+                }
+
+                & .name {
+                    margin-left: 10px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            
+        }
+
+        & .evident {
+            position: relative;
+            width: 400px;
+            height: fit-content;
+            left: 15px;
+            border: 2px solid var(--text-color-secondary);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            & h4 {
+                margin-left: 5px
+            }
+
+            & img {
+                width: 400px;
+                height: 300px;
+                object-fit: contain;
+            }
+        }
+
+        & .report-element.alert {
+            margin-top: 40px;
+            padding-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+
+            & h2 {
+                text-align: center;
+                color: orange;
+            }
+        }
+
+        & .report-element.chat {
+            position: relative;
+            margin-top: 20px;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+
+            & .header {
+                gap: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                & span {
+                    margin-top: 8px;
+                    font-size: 25px;
+                }
+
+                & h2 {
+                    color: var(--text-color-first);
+                }
+            }
+
+            & .message-box {
+                position: relative;
+                width: 95%;
+                height: 12rem;
+                margin-top: 20px;
+                border-radius: 10px 10px;
+                border: 1px solid var(--text-color-secondary);
+                overflow: auto;
+
+                & .send-by {
+                    margin-top: 5px;
+                    gap: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    color: var(--text-color-secondary);
+
+                    & p {
+                        font-size: 10px;
+                    }
+                }
+
+                & .sender {
+                    width: 45%;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    margin-right: 15px;
+                    padding-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;  
+
+                    .message {
+                        width: auto;
+                        height: auto;
+                        padding: 10px 10px;
+                        border-radius: 10px 10px 0px;
+                        display: flex;
+                        justify-content: center;
+                        background: rgb(36, 225, 58);
+
+                        & p {
+                            color: white;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                & .receiver {
+                    width: 45%;
+                    margin-left: 15px;
+                    padding-top: 20px;
+                    padding-bottom: 10px;
+                    display: flex;
+                    flex-direction: column; 
+                    align-items: flex-start;           
+
+                    .message {
+                        width: auto;
+                        height: auto;
+                        padding: 10px 10px;
+                        border-radius: 10px 10px 10px 0px;
+                        display: flex;
+                        justify-content: center;
+                        background: rgb(236, 131, 2);
+
+                        & p {
+                            color: white;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+
+            & .input-message-box {
+                position: relative;
+                width: 95%;
+                height: 45px;
+                margin: 20px 0;
+                border: 2px solid var(--text-color-secondary);
+                border-radius: 10px 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                & input {
+                    width: 100%;
+                    height: 100%;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    color: var(--text-color-first);
+                    font-weight: 400;
+                    padding: 0 35px 0 10px;
+                }
+
+                & .btn-send-message {
+                    width: 120px;
+                    height: 30px;
+                    gap: 5px;
+                    margin-right: 5px;
+                    border: none;
+                    border-radius: 10px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--btn-color-blue);
+                    font-size: 16px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                & .btn-send-message:hover{
+                    background: var(--btn-color-blue-hover);
+                }
+            }
+
+            & .btn-report-complete {
+                position: relative;
+                width: 320px;
+                height: 40px;
+                top: 10px;
+                margin: auto;
+                left: 0;
+                right: 0;
+                border: none;
+                border-radius: 10px 10px;
+                background: var(--btn-edit-submit);
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+            }
+
+            & .btn-report-complete:hover {   
+                background: var(--btn-edit-submit-hover);       
+            }
+        }
+
+        & .underline {
+            position: relative;
+            width: 95%;
+            border-bottom: 2px solid var(--text-color-secondary);
+        }
+    }
+}

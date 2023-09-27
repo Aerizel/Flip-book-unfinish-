@@ -1,0 +1,212 @@
+
+& .statistic-admin {
+    position: relative;
+    width: calc(100% - 350px);
+    height: auto;
+    left: 350px;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & h1 {
+        position: relative;
+        text-align: center;
+        color: #696969;
+    }
+
+    & .underline {
+        padding-top: 3rem;
+        margin: auto;
+        left: 0;
+        right: 0;
+        width: 86%;
+        border-bottom: 2px solid var(--text-color-secondary);
+    }
+
+    & .three-display {
+        position: relative;
+        margin-top: 2rem;
+        gap: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        & .display {
+            position: relative;
+            width: 310px;
+            height: 120px;
+            border-radius: 10px 10px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+
+            & h3 {
+                margin-top: 10px;
+                text-align: center;
+                color: var(--text-color-first);
+            }
+
+            & p {
+                margin-top: 10px;
+                text-align: center;
+                color: var(--text-color-first);
+                font-size: 20px;
+            }
+        }
+    }
+
+    & .one-display-chart {
+        position: relative;
+        width: 87%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        margin-top: 3rem;
+        gap: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        & .display {
+            width: 350px;
+            height: 180px;
+            border-radius: 10px 10px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+
+            & h3 {
+                margin-top: 10px;
+                text-align: center;
+                color: var(--text-color-first);
+            }
+
+            & p {
+                margin-top: 10px;
+                margin-left: 20px;
+                color: var(--text-color-first);
+                font-size: 18px;
+            }
+        }
+
+        & .one-chart {
+            width: 55%;
+            height: 360px;
+            border-radius: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+    
+            & h3 {
+                margin-top: 10px;
+                text-align: center;
+                color: var(--text-color-first);
+            }
+    
+            & .graph {
+                width: 100%;  
+                height: 80%;
+                display: flex;
+                justify-content: center;
+            }
+
+            & .pie {
+                width: 90%;  
+                height: 80%;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+
+    & .two-ranking {
+        position: relative;
+        width: 83%;
+        height: auto;
+        margin: auto;
+        left: 0;
+        right: 0;
+        margin-top: 3rem;
+        gap: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        & .ranking {
+            width: 300px;
+            height: 21rem;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h3 {
+                margin-top: 10px;
+                width: 90%;
+                text-align: center;
+                border-bottom: 2px solid var(--text-color-secondary);
+                color: var(--text-color-first);
+            }
+
+            & .none {
+                margin-top: 10px;
+                font-size: 18px;
+                color: var(--text-color-secondary);
+            }
+
+            & .data-list {
+                width: 90%;
+                margin-top: 10px;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                overflow: auto;
+
+                & p {
+                    color: var(--text-color-first);
+                }
+
+                & .name {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    max-width: 55%;
+                }
+
+                & .count {
+                    width: 40%;
+                    margin-left: auto;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        & .ranking.book-type {
+            overflow: scroll;
+
+            & table {
+                width: 90%;
+                height: 90%;
+                margin-top: 0px;
+
+                & th {
+                    font-weight: 100;
+                    border-bottom: 1px solid gray;
+                }
+
+                & td {
+                    padding-top: 5px;
+                    border-bottom: 1px solid gray;
+
+                    & .view,.sell {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
